@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Debug username
-        run: echo "USERNAME=${{ secrets.DOCKER_USERNAME }}"
+        run: echo "USERNAME=${{ vars.DOCKER_USERNAME }}"
       - name: Login docker
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ vars.DOCKER_USERNAME }}" --password-stdin
       - name: Build image docker
         run: docker build . -t doanxuanduyen/training:${{ github.sha }}
       - name: Push image docker
