@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    name: Pull image and deploy to production
+    steps:
+      - uses: actions/checkout@v5
+      - name: Pull image docker
+        run: docker pull doanxuanduyen/training:develop-latest
+      - name: Tag image docker for production
+        run: docker tag doanxuanduyen/training:develop-latest doanxuanduyen/training:production-latest
+      - name: Push production-latest image docker for production
+        run: docker push doanxuanduyen/training:production-latest
