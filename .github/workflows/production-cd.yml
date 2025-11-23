@@ -8,6 +8,8 @@ jobs:
     name: Pull image and deploy to production
     steps:
       - uses: actions/checkout@v5
+      - name: Login docker
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ vars.DOCKER_USERNAME }}" --password-stdin
       - name: Pull image docker
         run: docker pull doanxuanduyen/training:develop-latest
       - name: Tag image docker for production
