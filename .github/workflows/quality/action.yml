@@ -22,6 +22,6 @@ runs:
     - name: Unit Test
       run: npm run test
       shell: bash
-    - name: Lint
+    - name: Run Lint
       run: npm run lint
       shell: bash
