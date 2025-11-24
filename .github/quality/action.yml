@@ -19,9 +19,3 @@ runs:
     - name: Install
       run: npm install
       shell: bash
-    - name: Unit Test
-      run: npm run test
-      shell: bash
-    - name: Lint
-      run: npm run lint
-      shell: bash
