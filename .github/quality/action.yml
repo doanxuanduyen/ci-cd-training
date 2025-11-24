@@ -15,7 +15,7 @@ runs:
     - uses: actions/checkout@v5
     - uses: actions/setup-node@v6
       with:
-        node-version: ${{ vars.NODE_VERSION }}
+        node-version: 22.0.0
     - name: Install
       run: npm install
       shell: bash
