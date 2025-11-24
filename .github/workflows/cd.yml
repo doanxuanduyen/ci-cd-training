@@ -15,8 +15,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ vars.DOCKER_USERNAME }}" --password-stdin
       - name: Build image docker
         run: docker build . -t doanxuanduyen/training:${{ github.sha }}
-      - name: Tag image docker
-        run: docker tag doanxuanduyen/training:${{ github.sha }} doanxuanduyen/training:develop-latest
+
       - name: Push image docker
         run: docker push doanxuanduyen/training:${{ github.sha }}
       - name: Push tagged image docker
