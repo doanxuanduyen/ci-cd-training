@@ -7,9 +7,5 @@ on:
       - develop
 
 jobs:
-  unit-test:
-    runs-on: ubuntu-latest
-    name: Run Unit Test
-    steps:
-      - id: foo
-        uses: doanxuanduyen1357/ci-cd-training/.github/quality@v1
+  run_tests:
+    uses: ./.github/workflows/test-workflows.yml
