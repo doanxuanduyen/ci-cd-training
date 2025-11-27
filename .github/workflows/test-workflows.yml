@@ -19,3 +19,17 @@ jobs:
       - name: Lint
         run: npm run lint
         shell: bash
+  lint:
+    runs-on: ubuntu-latest
+    name: Run Unit Test
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22.0.0
+      - name: Install
+        run: npm install
+        shell: bash
+      - name: Lint
+        run: npm run lint
+        shell: bash
